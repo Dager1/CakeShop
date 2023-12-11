@@ -12,6 +12,11 @@ const Infofields = () => {
     setPrice("");
   };
 
+  const handleDelete = (index) => {
+    const updatedCupCakeData = cupCakeData.filter((item, i) => i !== index);
+    setCupCakeData(updatedCupCakeData);
+  };
+
   return (
     <div>
       <form>
@@ -29,6 +34,7 @@ const Infofields = () => {
           <li key={index}>
             Number of cupcakes: {item.cupcakes} | Price of cupcakes:{" "}
             {item.price}
+            <button onClick={() => handleDelete(index)}>Delete</button>
           </li>
         ))}
       </ul>
