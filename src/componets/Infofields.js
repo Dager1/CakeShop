@@ -29,20 +29,30 @@ const Infofields = () => {
         </button>
       </form>
       <h2>Cupcakes and Prices:</h2>
-      <table>
+      <table style={{ borderCollapse: "collapse", width: "100%" }}>
         <thead>
-          <tr>
-            <th>Number of Cupcakes</th>
-            <th>Price of Cupcakes</th>
-            <th>Action</th>
+          <tr style={{ border: "1px solid black" }}>
+            <th style={{ border: "1px solid black", padding: "8px" }}>
+              Number of Cupcakes
+            </th>
+            <th style={{ border: "1px solid black", padding: "8px" }}>
+              Price of Cupcakes
+            </th>
+            <th style={{ border: "1px solid black", padding: "8px" }}>
+              Action
+            </th>
           </tr>
         </thead>
         <tbody>
           {cupCakeData.map((item, index) => (
-            <tr key={index}>
-              <td>{item.cupcakes}</td>
-              <td>{item.price}</td>
-              <td>
+            <tr key={index} style={{ border: "1px solid black" }}>
+              <td style={{ border: "1px solid black", padding: "8px" }}>
+                {item.cupcakes}
+              </td>
+              <td style={{ border: "1px solid black", padding: "8px" }}>
+                {item.price}
+              </td>
+              <td style={{ border: "1px solid black", padding: "8px" }}>
                 <button onClick={() => handleDelete(index)}>Delete</button>
               </td>
             </tr>
