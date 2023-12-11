@@ -1,29 +1,21 @@
 import React, { useState } from "react";
 
 const Infofields = () => {
-  const [cupcakes, setCupcakes] = useState({
-    NoOfCupcake: "",
-    PriceOfCupcakes: "",
-  });
+  const [cupcakes, setCupcakes] = useState();
+  const [price, setPrice] = useState();
   return (
     <div>
       <form>
         <label>Enter the number of cup cakes</label>
         <input
-          value={cupcakes.NoOfCupcake}
-          onChange={(e) =>
-            setCupcakes({ ...cupcakes, NoOfCupcake: e.target.value })
-          }></input>
+          value={cupcakes}
+          onChange={(e) => setCupcakes(e.target.value)}></input>
         <label>Enter the number of cup cakes</label>
-        <input
-          value={cupcakes.PriceOfCupcakes}
-          onChange={(e) =>
-            setCupcakes({ ...cupcakes, PriceOfCupcakes: e.target.value })
-          }></input>
+        <input value={price} onChange={(e) => setPrice(e.target.value)}></input>
       </form>
       <h2>
-        Number of cupcakes:{cupcakes.NoOfCupcake} price of cupcakes:
-        {cupcakes.PriceOfCupcakes}
+        Number of cupcakes:{cupcakes} price of cupcakes:
+        {price}
       </h2>
     </div>
   );
