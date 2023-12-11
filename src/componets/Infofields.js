@@ -29,15 +29,26 @@ const Infofields = () => {
         </button>
       </form>
       <h2>Cupcakes and Prices:</h2>
-      <ul>
-        {cupCakeData.map((item, index) => (
-          <li key={index}>
-            Number of cupcakes: {item.cupcakes} | Price of cupcakes:{" "}
-            {item.price}
-            <button onClick={() => handleDelete(index)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Number of Cupcakes</th>
+            <th>Price of Cupcakes</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cupCakeData.map((item, index) => (
+            <tr key={index}>
+              <td>{item.cupcakes}</td>
+              <td>{item.price}</td>
+              <td>
+                <button onClick={() => handleDelete(index)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
